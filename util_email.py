@@ -1,7 +1,7 @@
 def send_email(receiver_email, filename):
     import os
     import email, smtplib, ssl
-
+    import datetime as dt
     from email import encoders
     from email.mime.base import MIMEBase
     from email.mime.multipart import MIMEMultipart
@@ -38,3 +38,4 @@ def send_email(receiver_email, filename):
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
         server.login(sender_email, password)
         server.sendmail(sender_email, receiver_email, text)
+        print('{} sent to {} at time {}'.format(filename,receiver_email,dt.datetime.now().strftime("%D %I:%M:%S %p")))

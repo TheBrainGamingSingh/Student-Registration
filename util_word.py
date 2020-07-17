@@ -1,4 +1,4 @@
-def df_to_word(student_id, student_name, open_ele_id, open_ele):
+def df_to_word(student_id, student_name, open_ele_id, open_ele, dec1_id, dec1, dec2_id, dec2):
 	from docx import Document
 	from docx.enum.text import WD_ALIGN_PARAGRAPH
 	from docx.enum.table import WD_TABLE_ALIGNMENT
@@ -87,4 +87,6 @@ def df_to_word(student_id, student_name, open_ele_id, open_ele):
 	    row.height = Inches(1.2)
 
 
-	document.save('{}.docx'.format(student_id))
+	document.save('Slips\\{}.docx'.format(student_id))
+
+	return 'Slips\\{}.docx'.format(student_id)
